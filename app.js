@@ -1,7 +1,7 @@
 
 const inquirer = require('inquirer');
-// const fs = require('fs');
-// const generatePage = require('./src/page-template.js');
+const fs = require('fs');
+const generatePage = require('./src/page-template.js');
 
 // const pageHTML = generatePage(name, github);
 
@@ -96,7 +96,7 @@ const promptProject = portfolioData => {
             {
                 type: 'checkbox',
                 name: 'languages',
-                message: 'What did you this project with? (Check all that apply)',
+                message: 'What did you build this project with? (Check all that apply)',
                 choices: ['JavaScript', 'HTML', 'CSS', 'ES6', 'jQuery', 'Bootstrap', 'Node']
             },
             {
@@ -138,5 +138,11 @@ const promptProject = portfolioData => {
 promptUser()
     .then(promptProject)
     .then(portfolioData => {
-        console.log(portfolioData);
+        const pageHTML = generatePage(portfolioData);
+
+        fs.writeFile('./index.html', pageHTML, err => {
+            if (err) throw new Error(err);
+
+            console.log('Page created!  Check out index.html in this directory to see it!');
+        });
     });
