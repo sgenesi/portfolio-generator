@@ -1,8 +1,9 @@
 # portfolio-generator
-The Portfolio Generator is a node based app that allows a user to enter information based on generated questions. Once all the information is entered, the program will generate a professionaly made portfolio featuring all information the user inputed.  
+The Portfolio Generator is a command-line application that dynamically generates a professional portfolio from a user's input using the Inquirer package.  
 
 Table of Contents
 * [User Story and Acceptance Criteria](#user-story-and-acceptance-criteria)
+*[Built With](#built-with)
 *[Key Features](#key-features)
 *[Links](#links)
 *[Images](#images)
@@ -38,6 +39,12 @@ THEN I can enter my information.
 WHEN I open the page
 THEN I can see my professional portfolio.
 ```
+
+---
+## Built With
+* Node.js
+* HTML
+* CSS
 
 ---
 ## Key Features
